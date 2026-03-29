@@ -1,0 +1,37 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 280 64" fill="none">
+  <!--
+    VCMint Logo V1 — Mark + Wordmark
+    Concept: A geometric "mint leaf" formed from two overlapping V shapes,
+    representing the VC (venture capital) and the organic growth of "mint."
+    The overlap creates a copper diamond at the intersection.
+  -->
+  <defs>
+    <style>
+      .wordmark { font-family: 'Georgia', 'Times New Roman', serif; font-weight: 700; }
+    </style>
+  </defs>
+
+  <!-- Mark: Overlapping V shapes forming a leaf/diamond -->
+  <g id="mark">
+    <!-- Left V stroke — espresso -->
+    <path d="M8 12 L22 50 L28 34" stroke="#1A1613" stroke-width="4.5" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
+    <!-- Right V stroke — copper -->
+    <path d="M42 12 L28 50 L22 34" stroke="#A65D2E" stroke-width="4.5" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
+    <!-- Center diamond accent -->
+    <path d="M25 28 L28 22 L31 28 L28 34 Z" fill="#A65D2E" opacity="0.85"/>
+    <!-- Small stem/dot above — the "mint" sprig -->
+    <circle cx="25" cy="8" r="2.2" fill="#A65D2E"/>
+    <line x1="25" y1="10.2" x2="25" y2="16" stroke="#A65D2E" stroke-width="1.8" stroke-linecap="round"/>
+  </g>
+
+  <!-- Wordmark -->
+  <g transform="translate(58, 0)">
+    <!-- VC — bold espresso -->
+    <text x="0" y="44" class="wordmark" font-size="38" fill="#1A1613" letter-spacing="-1">VC</text>
+    <!-- Mint — bold copper -->
+    <text x="58" y="44" class="wordmark" font-size="38" fill="#A65D2E" letter-spacing="-1">Mint</text>
+  </g>
+
+  <!-- Tagline -->
+  <text x="58" y="58" font-family="'Helvetica Neue', Arial, sans-serif" font-size="8.5" font-weight="500" fill="#7A746D" letter-spacing="3.5" text-transform="uppercase">BACKING RESILIENT FOUNDERS</text>
+</svg>

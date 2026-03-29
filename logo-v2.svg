@@ -1,0 +1,40 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 72" fill="none">
+  <!--
+    VCMint Logo V2 — Typographic / Lettering Only
+    Concept: Custom lettering where the "V" has a sharp, angular cut
+    and the dot on the "i" is replaced with a copper diamond.
+    The "C" has an open aperture. Clean, editorial, no icon needed.
+  -->
+  <defs>
+    <style>
+      .logo-type { font-family: 'Georgia', 'Times New Roman', serif; }
+    </style>
+  </defs>
+
+  <!-- Custom "V" — angular, sharp, slightly wider than natural -->
+  <path d="M4 16 L26 58 L48 16" stroke="#1A1613" stroke-width="5.5" fill="none" stroke-linecap="square" stroke-linejoin="miter"/>
+
+  <!-- "C" — open aperture serif C -->
+  <path d="M88 20 C78 14, 62 14, 56 24 C50 34, 50 44, 56 52 C62 60, 78 60, 88 54" stroke="#1A1613" stroke-width="5" fill="none" stroke-linecap="round"/>
+
+  <!-- "M" -->
+  <path d="M104 58 L104 18 L122 44 L140 18 L140 58" stroke="#A65D2E" stroke-width="5" fill="none" stroke-linecap="square" stroke-linejoin="miter"/>
+
+  <!-- "i" with diamond dot -->
+  <line x1="156" y1="30" x2="156" y2="58" stroke="#A65D2E" stroke-width="5" stroke-linecap="square"/>
+  <!-- Diamond dot replacing circle -->
+  <path d="M156 14 L160.5 19 L156 24 L151.5 19 Z" fill="#A65D2E"/>
+
+  <!-- "n" -->
+  <path d="M174 58 L174 30 C174 22, 186 22, 192 28 L192 58" stroke="#A65D2E" stroke-width="5" fill="none" stroke-linecap="square" stroke-linejoin="round"/>
+
+  <!-- "t" -->
+  <line x1="212" y1="14" x2="212" y2="58" stroke="#A65D2E" stroke-width="5" stroke-linecap="square"/>
+  <line x1="200" y1="28" x2="224" y2="28" stroke="#A65D2E" stroke-width="4" stroke-linecap="round"/>
+
+  <!-- Horizontal rule accent -->
+  <line x1="4" y1="66" x2="224" y2="66" stroke="#A65D2E" stroke-width="1.5" opacity="0.35"/>
+
+  <!-- Tagline tucked under the rule -->
+  <text x="4" y="72" font-family="'Helvetica Neue', Arial, sans-serif" font-size="7" font-weight="500" fill="#7A746D" letter-spacing="4" opacity="0">BACKING RESILIENT FOUNDERS</text>
+</svg>

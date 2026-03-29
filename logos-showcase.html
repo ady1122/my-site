@@ -1,0 +1,338 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>VCMint Logo Showcase</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600&family=Playfair+Display:wght@700&display=swap" rel="stylesheet" />
+  <style>
+    :root {
+      --bg: #F5F0EA;
+      --bg-dark: #171411;
+      --text: #1A1613;
+      --text-sec: #7A746D;
+      --copper: #A65D2E;
+      --border: #E5DFD7;
+      --sans: 'Outfit', system-ui, sans-serif;
+      --serif: 'Playfair Display', Georgia, serif;
+    }
+
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+
+    body {
+      font-family: var(--sans);
+      background: #E8E3DC;
+      color: var(--text);
+      min-height: 100vh;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    .page-header {
+      padding: 3rem 2.5rem 2rem;
+      max-width: 960px;
+      margin: 0 auto;
+    }
+    .page-header h1 {
+      font-family: var(--serif);
+      font-size: 2rem;
+      font-weight: 700;
+      margin-bottom: 0.5rem;
+    }
+    .page-header p {
+      color: var(--text-sec);
+      font-size: 0.95rem;
+      line-height: 1.6;
+    }
+
+    .showcase {
+      max-width: 960px;
+      margin: 0 auto;
+      padding: 0 2.5rem 4rem;
+      display: flex;
+      flex-direction: column;
+      gap: 3rem;
+    }
+
+    .logo-section {
+      background: var(--bg);
+      border: 1px solid var(--border);
+      border-radius: 16px;
+      overflow: hidden;
+    }
+
+    .logo-section-header {
+      padding: 1.5rem 2rem;
+      border-bottom: 1px solid var(--border);
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+    .logo-section-header h2 {
+      font-size: 1rem;
+      font-weight: 600;
+    }
+    .logo-badge {
+      font-size: 0.7rem;
+      font-weight: 600;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--copper);
+      background: rgba(166, 93, 46, 0.08);
+      padding: 0.3rem 0.75rem;
+      border-radius: 100px;
+    }
+
+    .logo-row {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+    }
+
+    .logo-cell {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 3.5rem 2rem;
+      position: relative;
+    }
+    .logo-cell img,
+    .logo-cell svg {
+      max-width: 260px;
+      width: 100%;
+      height: auto;
+    }
+
+    .logo-cell.light-bg {
+      background: #FFFFFF;
+    }
+    .logo-cell.parchment-bg {
+      background: var(--bg);
+    }
+    .logo-cell.dark-bg {
+      background: var(--bg-dark);
+    }
+    .logo-cell.mid-bg {
+      background: #2C2520;
+    }
+
+    .logo-cell .bg-label {
+      position: absolute;
+      bottom: 0.75rem;
+      left: 50%;
+      transform: translateX(-50%);
+      font-size: 0.65rem;
+      font-weight: 500;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      opacity: 0.4;
+    }
+    .logo-cell.light-bg .bg-label,
+    .logo-cell.parchment-bg .bg-label { color: var(--text); }
+    .logo-cell.dark-bg .bg-label,
+    .logo-cell.mid-bg .bg-label { color: #F5F0EA; }
+
+    /* Divider between cells */
+    .logo-cell + .logo-cell {
+      border-left: 1px solid var(--border);
+    }
+    .logo-cell.dark-bg + .logo-cell,
+    .logo-cell + .logo-cell.dark-bg {
+      border-left-color: rgba(245, 240, 234, 0.06);
+    }
+
+    .logo-desc {
+      padding: 1.5rem 2rem;
+      border-top: 1px solid var(--border);
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 2rem;
+    }
+    .logo-desc-item h4 {
+      font-size: 0.72rem;
+      font-weight: 600;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--text-sec);
+      margin-bottom: 0.4rem;
+    }
+    .logo-desc-item p {
+      font-size: 0.88rem;
+      color: var(--text);
+      line-height: 1.6;
+    }
+
+    /* Color swatches */
+    .swatches {
+      max-width: 960px;
+      margin: 0 auto;
+      padding: 0 2.5rem 4rem;
+    }
+    .swatches h3 {
+      font-size: 0.85rem;
+      font-weight: 600;
+      margin-bottom: 1rem;
+      color: var(--text-sec);
+    }
+    .swatch-row {
+      display: flex;
+      gap: 0.75rem;
+      flex-wrap: wrap;
+    }
+    .swatch {
+      width: 80px;
+      text-align: center;
+    }
+    .swatch-color {
+      width: 80px;
+      height: 56px;
+      border-radius: 10px;
+      border: 1px solid var(--border);
+      margin-bottom: 0.4rem;
+    }
+    .swatch-label {
+      font-size: 0.7rem;
+      font-weight: 500;
+      color: var(--text-sec);
+    }
+    .swatch-hex {
+      font-size: 0.65rem;
+      color: var(--text-sec);
+      opacity: 0.6;
+      font-family: 'SF Mono', 'Fira Code', monospace;
+    }
+
+    @media (max-width: 700px) {
+      .logo-row { grid-template-columns: 1fr; }
+      .logo-cell + .logo-cell { border-left: none; border-top: 1px solid var(--border); }
+      .logo-desc { grid-template-columns: 1fr; gap: 1rem; }
+      .page-header, .showcase, .swatches { padding-left: 1.5rem; padding-right: 1.5rem; }
+    }
+  </style>
+</head>
+<body>
+
+  <div class="page-header">
+    <h1>VCMint Logo Options</h1>
+    <p>Two directions. Both use the site palette (espresso + burnished copper on parchment). Pick one, or mix elements.</p>
+  </div>
+
+  <div class="showcase">
+
+    <!-- ===== Logo V1 ===== -->
+    <div class="logo-section">
+      <div class="logo-section-header">
+        <h2>Logo 1: Mark + Wordmark</h2>
+        <span class="logo-badge">Minimal / Modern</span>
+      </div>
+      <div class="logo-row">
+        <div class="logo-cell light-bg">
+          <img src="logo-v1.svg" alt="VCMint Logo V1 on white" />
+          <span class="bg-label">White</span>
+        </div>
+        <div class="logo-cell dark-bg">
+          <img src="logo-v1-light.svg" alt="VCMint Logo V1 on dark" />
+          <span class="bg-label">Dark</span>
+        </div>
+      </div>
+      <div class="logo-row">
+        <div class="logo-cell parchment-bg">
+          <img src="logo-v1.svg" alt="VCMint Logo V1 on parchment" />
+          <span class="bg-label">Parchment</span>
+        </div>
+        <div class="logo-cell mid-bg">
+          <img src="logo-v1-light.svg" alt="VCMint Logo V1 on mid-dark" />
+          <span class="bg-label">Mid-dark</span>
+        </div>
+      </div>
+      <div class="logo-desc">
+        <div class="logo-desc-item">
+          <h4>Concept</h4>
+          <p>Two overlapping V-shapes form a leaf/diamond mark. The "VC" is literal, the intersection creates a copper diamond, and the sprig above nods to "mint" as growth. The mark works standalone as a favicon or social avatar.</p>
+        </div>
+        <div class="logo-desc-item">
+          <h4>Best For</h4>
+          <p>Social media profiles, favicons, business cards, slide decks. The mark separates cleanly from the wordmark when space is tight. Strong at small sizes.</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- ===== Logo V2 ===== -->
+    <div class="logo-section">
+      <div class="logo-section-header">
+        <h2>Logo 2: Typographic Lettering</h2>
+        <span class="logo-badge">Distinctive / Editorial</span>
+      </div>
+      <div class="logo-row">
+        <div class="logo-cell light-bg">
+          <img src="logo-v2.svg" alt="VCMint Logo V2 on white" />
+          <span class="bg-label">White</span>
+        </div>
+        <div class="logo-cell dark-bg">
+          <img src="logo-v2-light.svg" alt="VCMint Logo V2 on dark" />
+          <span class="bg-label">Dark</span>
+        </div>
+      </div>
+      <div class="logo-row">
+        <div class="logo-cell parchment-bg">
+          <img src="logo-v2.svg" alt="VCMint Logo V2 on parchment" />
+          <span class="bg-label">Parchment</span>
+        </div>
+        <div class="logo-cell mid-bg">
+          <img src="logo-v2-light.svg" alt="VCMint Logo V2 on mid-dark" />
+          <span class="bg-label">Mid-dark</span>
+        </div>
+      </div>
+      <div class="logo-desc">
+        <div class="logo-desc-item">
+          <h4>Concept</h4>
+          <p>Custom hand-drawn lettering. The "V" and "C" are sharp, angular espresso strokes. "Mint" shifts to copper with a diamond replacing the dot on the "i." The two-tone split reinforces the VC/Mint brand structure through color alone. No icon needed.</p>
+        </div>
+        <div class="logo-desc-item">
+          <h4>Best For</h4>
+          <p>Website header, hero sections, print collateral, letterheads. The editorial weight matches the site's Playfair Display personality. Feels more premium and authorial. Works best at medium-to-large sizes.</p>
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+  <!-- Color reference -->
+  <div class="swatches">
+    <h3>Brand Palette Reference</h3>
+    <div class="swatch-row">
+      <div class="swatch">
+        <div class="swatch-color" style="background: #1A1613;"></div>
+        <div class="swatch-label">Espresso</div>
+        <div class="swatch-hex">#1A1613</div>
+      </div>
+      <div class="swatch">
+        <div class="swatch-color" style="background: #A65D2E;"></div>
+        <div class="swatch-label">Copper</div>
+        <div class="swatch-hex">#A65D2E</div>
+      </div>
+      <div class="swatch">
+        <div class="swatch-color" style="background: #C8784A;"></div>
+        <div class="swatch-label">Copper Light</div>
+        <div class="swatch-hex">#C8784A</div>
+      </div>
+      <div class="swatch">
+        <div class="swatch-color" style="background: #F5F0EA;"></div>
+        <div class="swatch-label">Parchment</div>
+        <div class="swatch-hex">#F5F0EA</div>
+      </div>
+      <div class="swatch">
+        <div class="swatch-color" style="background: #7A746D;"></div>
+        <div class="swatch-label">Stone</div>
+        <div class="swatch-hex">#7A746D</div>
+      </div>
+      <div class="swatch">
+        <div class="swatch-color" style="background: #171411;"></div>
+        <div class="swatch-label">Dark BG</div>
+        <div class="swatch-hex">#171411</div>
+      </div>
+    </div>
+  </div>
+
+</body>
+</html>
