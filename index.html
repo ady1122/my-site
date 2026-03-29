@@ -17,7 +17,7 @@
   <meta name="twitter:image" content="https://vcmint.com/og-image.png" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Barlow:wght@400;500;600;700&family=Barlow+Condensed:wght@600;700;800&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Barlow:wght@400;500;600;700&family=Barlow+Condensed:wght@600;700;800&family=Rajdhani:wght@500;600;700&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="styles.css" />
   <!-- Favicon: logo mark -->
   <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 48 56' fill='none'%3E%3Crect width='48' height='56' rx='8' fill='%23DC0000'/%3E%3Cpath d='M6 10L20 44L26 30' stroke='%23fff' stroke-width='4' stroke-linecap='round' stroke-linejoin='round'/%3E%3Cpath d='M40 10L26 44L20 30' stroke='%23F0C808' stroke-width='4' stroke-linecap='round' stroke-linejoin='round'/%3E%3Cpath d='M23 24L26 18L29 24L26 30Z' fill='%23F0C808' opacity='0.9'/%3E%3Ccircle cx='23' cy='6' r='2' fill='%23F0C808'/%3E%3Cline x1='23' y1='8' x2='23' y2='13' stroke='%23F0C808' stroke-width='1.5' stroke-linecap='round'/%3E%3C/svg%3E" />
@@ -529,14 +529,14 @@
     .widget-launcher {
       background: var(--green);
       color: #fff;
-      border: none;
+      border: 1px solid rgba(255, 107, 26, 0.4);
       border-radius: 50px;
       padding: 14px 22px;
       font-family: var(--sans);
       font-size: 0.95rem;
       font-weight: 600;
       cursor: pointer;
-      box-shadow: 0 4px 20px rgba(220, 0, 0, 0.3);
+      box-shadow: 0 0 20px rgba(255, 107, 26, 0.3), 0 4px 20px rgba(255, 107, 26, 0.15);
       transition: transform 0.2s var(--ease-spring), box-shadow 0.2s ease, background 0.2s ease;
       display: flex;
       align-items: center;
@@ -544,17 +544,18 @@
     }
     .widget-launcher:hover {
       transform: scale(1.05);
-      box-shadow: 0 6px 28px rgba(220, 0, 0, 0.4);
+      box-shadow: 0 0 35px rgba(255, 107, 26, 0.45), 0 6px 28px rgba(255, 107, 26, 0.2);
       background: var(--green-hover);
     }
     .widget-launcher svg { flex-shrink: 0; }
     .widget-launcher.secondary {
       background: var(--bg-elevated);
-      box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+      border-color: rgba(0, 212, 255, 0.3);
+      box-shadow: 0 0 20px rgba(0, 212, 255, 0.15), 0 4px 20px rgba(0, 0, 0, 0.2);
     }
     .widget-launcher.secondary:hover {
-      background: var(--text);
-      box-shadow: 0 6px 28px rgba(0, 0, 0, 0.3);
+      background: #252B45;
+      box-shadow: 0 0 35px rgba(0, 212, 255, 0.25), 0 6px 28px rgba(0, 0, 0, 0.3);
     }
 
     /* --- Shared widget close button --- */
@@ -565,7 +566,7 @@
       z-index: 9999;
       background: var(--green);
       color: #fff;
-      border: none;
+      border: 1px solid rgba(255, 107, 26, 0.4);
       border-radius: 50%;
       width: 52px;
       height: 52px;
@@ -573,11 +574,11 @@
       display: none;
       align-items: center;
       justify-content: center;
-      box-shadow: 0 4px 20px rgba(220, 0, 0, 0.3);
+      box-shadow: 0 0 20px rgba(255, 107, 26, 0.3);
       transition: transform 0.2s var(--ease-spring), background 0.2s ease;
     }
     .widget-close.visible { display: flex; }
-    .widget-close:hover { transform: scale(1.05); background: var(--green-hover); }
+    .widget-close:hover { transform: scale(1.05); background: var(--green-hover); box-shadow: 0 0 30px rgba(255, 107, 26, 0.4); }
 
     /* --- Shared chat window styles --- */
     .chat-window {
@@ -616,12 +617,14 @@
       display: flex;
       align-items: center;
       gap: 10px;
+      border-bottom: 1px solid rgba(255, 107, 26, 0.15);
     }
     .chat-header-dot {
       width: 8px; height: 8px;
-      background: #4ade80;
+      background: #00D4FF;
       border-radius: 50%;
       flex-shrink: 0;
+      box-shadow: 0 0 8px rgba(0, 212, 255, 0.5);
     }
     .chat-header-sub {
       font-weight: 400;
@@ -645,16 +648,17 @@
     }
     .intake-progress-bar {
       height: 4px;
-      background: var(--border);
+      background: rgba(255, 255, 255, 0.06);
       border-radius: 2px;
       overflow: hidden;
     }
     .intake-progress-fill {
       height: 100%;
-      background: var(--green);
+      background: linear-gradient(90deg, var(--green), var(--gold));
       border-radius: 2px;
       transition: width 0.4s ease;
       width: 0%;
+      box-shadow: 0 0 8px rgba(255, 107, 26, 0.3);
     }
 
     .chat-messages {
@@ -682,17 +686,18 @@
       background: var(--green);
       color: #fff;
       border-bottom-right-radius: 4px;
+      box-shadow: 0 0 10px rgba(255, 107, 26, 0.15);
     }
     .chat-msg.assistant {
       align-self: flex-start;
-      background: var(--bg);
+      background: var(--bg-elevated);
       color: var(--text);
       border: 1px solid var(--border);
       border-bottom-left-radius: 4px;
     }
     .chat-msg.greeting {
       align-self: flex-start;
-      background: var(--bg);
+      background: var(--bg-elevated);
       color: var(--text-secondary);
       border: 1px solid var(--border);
       border-bottom-left-radius: 4px;
@@ -702,7 +707,7 @@
     .chat-typing {
       align-self: flex-start;
       padding: 10px 14px;
-      background: var(--bg);
+      background: var(--bg-elevated);
       border: 1px solid var(--border);
       border-radius: 14px;
       border-bottom-left-radius: 4px;
@@ -741,11 +746,11 @@
       font-family: var(--sans);
       font-size: 0.9rem;
       outline: none;
-      background: var(--bg);
+      background: var(--bg-elevated);
       color: var(--text);
       transition: border-color 0.2s ease;
     }
-    .chat-input:focus { border-color: var(--green); }
+    .chat-input:focus { border-color: var(--green); box-shadow: 0 0 10px rgba(255, 107, 26, 0.1); }
     .chat-input::placeholder { color: var(--text-secondary); }
     .chat-send {
       background: var(--green);
@@ -761,7 +766,7 @@
       transition: background 0.2s ease, transform 0.15s ease;
       flex-shrink: 0;
     }
-    .chat-send:hover { background: var(--green-hover); transform: scale(1.05); }
+    .chat-send:hover { background: var(--green-hover); transform: scale(1.05); box-shadow: 0 0 15px rgba(255, 107, 26, 0.3); }
     .chat-send:disabled { opacity: 0.5; cursor: not-allowed; transform: none; }
 
     @media (max-width: 480px) {
